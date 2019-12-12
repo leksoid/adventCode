@@ -25,7 +25,7 @@
 from got_fuel_01 import fuel_required_for_module, compute_total_fuel_required, sampleInput
 
 
-def added_fuel_required_for_module(module): # 14
+def added_fuel_required_for_module(module): 
     total = 0
     fuel = fuel_required_for_module(module)
     total += fuel
@@ -43,5 +43,3 @@ def compute_total_additional_fuel_required(modules):
         fuel = added_fuel_required_for_module(each)
         total += fuel
     return total
-
-print(compute_total_additional_fuel_required([83326,84939,135378]))
