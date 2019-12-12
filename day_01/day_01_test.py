@@ -3,6 +3,7 @@ from got_fuel_01 import fuel_required_for_module, compute_total_fuel_required
 from got_fuel_02 import added_fuel_required_for_module, is_further_fuel_required, compute_total_additional_fuel_required
 
 class ModuleFuelRequiredTestCase(unittest.TestCase):
+    # part 1 tests
     def test_for_one_module(self):
         required_fuel = fuel_required_for_module(12)
         self.assertEqual(required_fuel, 2)
@@ -12,6 +13,7 @@ class ModuleFuelRequiredTestCase(unittest.TestCase):
         required_fuel = compute_total_fuel_required(sampleInput)
         self.assertEqual(required_fuel, 101208)
 
+    # part 2 tests
     def test_for_one_module_additional_fuel_is_not_req(self):
         required_fuel = added_fuel_required_for_module(14)
         is_more_required = is_further_fuel_required(required_fuel)
