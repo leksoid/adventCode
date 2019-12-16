@@ -7,20 +7,18 @@ data = [
 
 sample = [1,9,10,3,2,3,11,0,99,30,40,50]
 
-# starts at [0] index = position 
-# if the [0] is 1 -> [+1] + [+2] = value to store 
-
 def opcode(n):
-    for index, value in enumerate(n[::4]):
-        print(value, n.index(value))
-        if value == 1:
-            addition = n[n[n.index(value) + 1]] + n[n[n.index(value) + 2]]
-            n[n[n.index(value) + 3]] = addition
-        elif value == 2:
-            multiply = n[n[n.index(value) + 1]] * n[n[n.index(value) + 2]]
-            n[n[n.index(value) + 3]] = multiply
-        elif value == 99:
+    i = 0 
+    while i < len(n):
+        if n[i] == 1:
+            add = n[n[i + 1]] + n[n[i + 2]]
+            n[n[i + 3]] = add
+        elif n[i] == 2:
+            mult = n[n[i + 1]] * n[n[i + 2]]
+            n[n[i + 3]] = mult
+        elif n[i] == 99:
             break
+        i += 4
     return n
 
 print(opcode(data))
